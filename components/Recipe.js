@@ -4,13 +4,14 @@ const Recipe = (props) => {
     const id = useParams().id;
     return (
       <div>
-        <a href="/">tagasi avalehele</a>
         <h2>{props.recipes[id].name}</h2>
+        <p>{props.recipes[id].duration} min</p>
         <ul>
           {props.recipes[id].ingredients.map((ingredient, index) => {
             return <li key={index}>{ingredient}</li>;
           })}
         </ul>
+        <p>{props.recipes[id].preparation}</p>
       </div>
     )
 }
